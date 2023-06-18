@@ -19,14 +19,14 @@ function AnimeItem() {
         status, rating, source } = anime
 
     //get anime based on id
-    const getAnime = async (anime) => {
+    const getAnime = async (animeId) => {
         const response = await fetch(`https://api.jikan.moe/v4/anime/${anime}`)
         const data = await response.json()
         setAnime(data.data)
     }
 
     //get characters
-    const getCharacters = async (anime) => {
+    const getCharacters = async (animeId) => {
         const response = await fetch(`https://api.jikan.moe/v4/anime/${anime}/characters`)
         const data = await response.json()
         setCharacters(data.data)
